@@ -182,3 +182,41 @@ def game_dict():
             ]
         }
     }
+
+
+def num_points_per_game(player_name):
+    for team in game_dict():
+        for player in game_dict()[team]['players']:
+            if player_name == player['name']:
+                return player['points_per_game']
+
+def player_age(player_name):
+    for team in game_dict():
+        for player in game_dict()[team]['players']:
+            if player_name == player['name']:
+                return player['age']
+
+def team_colors(team_name):
+    for team in game_dict():
+        if team_name == game_dict()[team]['team_name']:
+            return game_dict()[team]['colors']
+
+def team_names():
+    names = []
+    for team in game_dict():
+        names.append(game_dict()[team]['team_name'])
+    return names
+
+def player_numbers(team_name):
+    for team in game_dict():
+            if team_name == game_dict()[team]['team_name']:
+                return [player['number'] for player in game_dict()[team]['players']]
+
+def player_stats(player_name):
+    for team in game_dict():
+        for player in game_dict()[team]['players']:
+            if player_name == player['name']:
+                return player
+            
+def average_rebounds_by_shoe_brand():
+    pass
